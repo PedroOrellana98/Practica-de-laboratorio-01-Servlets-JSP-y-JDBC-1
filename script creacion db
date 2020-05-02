@@ -1,0 +1,25 @@
+CREATE TABLE Usuario(
+	cedula varchar(255) PRIMARY KEY,
+	nombre varchar(255) not null,
+	apellido varchar(255) not null,
+	correo varchar(255) not null,
+	contrasena varchar(255) not null
+);
+
+CREATE TABLE Telefono(
+	tel_codigo int AUTO_INCREMENT,
+	tel_cedula varchar(255) not null,
+	tel_numero varchar(255) null,
+	tel_tipo varchar(255) null,
+	tel_operadora varchar(255) null,
+	PRIMARY KEY (tel_codigo), 
+	FOREIGN KEY (tel_cedula)
+		REFERENCES  Usuario (cedula)
+)
+
+insert into usuario (cedula, nombre, apellido, correo, contrasena)
+values ('1400919302','alex','reinoso','ralexjessiel@gmail.com','123'); 
+
+
+insert into telefono (tel_cedula, tel_numero, tel_tipo, tel_operadora)
+values ((select cedula from usuario where nombre ='alex'), '0998952718','celular','cnt');

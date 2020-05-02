@@ -1,14 +1,10 @@
 package ec.ups.edu.dao;
 
-import ec.edu.ups.modelo.*;
-import java.util.List;
 
-public interface UsuarioDAO {
+import ec.edu.ups.modelo.Usuario;
+
+public interface UsuarioDAO extends DAO<Usuario, String>{
+
 	
-	void insertarUsuario(Usuario u);
-	
-	void eliminarUsuario(Usuario u);
-	
-	List<Usuario> obtenerTodos();
 
 }

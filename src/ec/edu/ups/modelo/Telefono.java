@@ -6,6 +6,7 @@ public class Telefono {
 	private String numero;
 	private String tipo;
 	private String operadora;
+	private String usu_cedula;
 	
 	
 	
@@ -39,6 +40,12 @@ public class Telefono {
 	}
 	public void setOperadora(String operadora) {
 		this.operadora = operadora;
+	}
+	public String getUsu_cedula() {
+		return usu_cedula;
+	}
+	public void setUsu_cedula(String usu_cedula) {
+		this.usu_cedula = usu_cedula;
 	}
 	
 	

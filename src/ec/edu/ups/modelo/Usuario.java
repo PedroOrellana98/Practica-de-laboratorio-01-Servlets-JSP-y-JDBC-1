@@ -1,6 +1,6 @@
 package ec.edu.ups.modelo;
 
-import java.awt.List;
+import java.util.List;
 
 import ec.edu.ups.modelo.*;
 
@@ -11,7 +11,7 @@ public class Usuario {
 	private String apellido;
 	private String correo;
 	private String pwd;
-	//private List telefonoList;
+	private List<Telefono> telefonoList;
 	
 	public Usuario() {
 		
@@ -55,6 +55,16 @@ public class Usuario {
 	public void setPwd(String pwd) {
 		this.pwd = pwd;
 	}
+
+	public List<Telefono> getTelefonoList() {
+		return telefonoList;
+	}
+
+	public void setTelefonoList(List<Telefono> telefonoList) {
+		this.telefonoList = telefonoList;
+	}
+	
+	
 	
 	
 
