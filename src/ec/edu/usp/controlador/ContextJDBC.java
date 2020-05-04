@@ -28,7 +28,8 @@ public class ContextJDBC {
 	private void connect() throws SQLException {
 		try {
 			Class.forName(DRIVER);
-			Connection conexion  = DriverManager.getConnection(URL,USER,pass);
+			Connection connection  = DriverManager.getConnection(URL,USER,pass);
+			this.statement = connection.createStatement();
 			
 		}catch(ClassNotFoundException e) {
 			System.out.println("Imposible cargar el driver: "+e.getMessage());
