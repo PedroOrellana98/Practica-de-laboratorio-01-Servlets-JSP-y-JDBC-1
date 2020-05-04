@@ -1,7 +1,10 @@
 package ec.edu.ups.modelo;
 
-public class Telefono {
+import java.io.Serializable;
+
+public class Telefono implements Serializable{
 	
+	private static final long serialVersionUID = 1L;
 	private int codigo;
 	private String numero;
 	private String tipo;
@@ -47,8 +50,10 @@ public class Telefono {
 	public void setUsu_cedula(String usu_cedula) {
 		this.usu_cedula = usu_cedula;
 	}
-	
-	
-	
+	@Override
+	public String toString() {
+		return "Telefono [codigo=" + codigo + ", numero=" + numero + ", tipo=" + tipo + ", operadora=" + operadora
+				+ ", usu_cedula=" + usu_cedula + "]";
+	}
 
 }
