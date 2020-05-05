@@ -11,7 +11,7 @@ public class ContextJDBC {
 	public static final String DRIVER = "com.mysql.jdc.Driver";
 	public static final String URL = "jdbc:mysql://localhost:3306/agenda";
 	public static final String USER = "root";
-	public static final String pass="";
+	public static final String pass="cuenca";
 	
 	private static ContextJDBC jdbc = null;
 	private Statement statement = null;
@@ -20,17 +20,25 @@ public class ContextJDBC {
 		this.connect();
 	}
 	
-	protected static ContextJDBC getJDBC() throws SQLException {
-		if(jdbc == null) jdbc = new ContextJDBC();
+	protected static ContextJDBC getJDBC(){
+		if(jdbc == null)
+			try {
+				jdbc = new ContextJDBC();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		return jdbc;
 	}
 	
-	private void connect() throws SQLException {
+	private void connect() {
 		try {
 			Class.forName(DRIVER);
 			Connection connection  = DriverManager.getConnection(URL,USER,pass);
 			this.statement = connection.createStatement();
 			
+		}catch(SQLException e) {
+			System.out.println("Imposible cargar el driver: "+e.getMessage());
 		}catch(ClassNotFoundException e) {
 			System.out.println("Imposible cargar el driver: "+e.getMessage());
 		}

@@ -13,7 +13,7 @@ public class Usuario implements Serializable{
 	private String apellido;
 	private String correo;
 	private String pwd;
-	private List<Telefono> telefonoList;
+
 	
 	public Usuario() {
 		
@@ -58,17 +58,10 @@ public class Usuario implements Serializable{
 		this.pwd = pwd;
 	}
 
-	public List<Telefono> getTelefonoList() {
-		return telefonoList;
-	}
-
-	public void setTelefonoList(List<Telefono> telefonoList) {
-		this.telefonoList = telefonoList;
-	}
 	
 	@Override
 	public String toString() {
-		return "Usuario [cedula: " +cedula +", nombre : " + nombre +", apellido: "+ apellido + "email: " + correo + ", telefonos:"+telefonoList+"]";
+		return "Usuario [cedula: " +cedula +", nombre : " + nombre +", apellido: "+ apellido + "email: " + correo +"]";
 	}
 	
 

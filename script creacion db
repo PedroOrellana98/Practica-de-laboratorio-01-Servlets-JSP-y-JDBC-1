@@ -1,5 +1,5 @@
 CREATE TABLE Usuario(
-	cedula varchar(255) PRIMARY KEY,
+	cedula varchar(25) PRIMARY KEY,
 	nombre varchar(255) not null,
 	apellido varchar(255) not null,
 	correo varchar(255) not null,
@@ -8,12 +8,12 @@ CREATE TABLE Usuario(
 
 CREATE TABLE Telefono(
 	tel_codigo int AUTO_INCREMENT,
-	tel_cedula varchar(255) not null,
+	usu_cedula varchar(25) not null,
 	tel_numero varchar(255) null,
 	tel_tipo varchar(255) null,
 	tel_operadora varchar(255) null,
 	PRIMARY KEY (tel_codigo), 
-	FOREIGN KEY (tel_cedula)
+	FOREIGN KEY (usu_cedula)
 		REFERENCES  Usuario (cedula)
 )
 
