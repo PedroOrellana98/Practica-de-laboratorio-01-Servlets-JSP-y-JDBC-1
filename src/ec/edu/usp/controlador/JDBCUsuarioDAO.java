@@ -4,9 +4,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import ec.edu.ups.modelo.*;
 
-public class JDBCUsuarioDAO extends JDBCGenericDAO<Usuario, String>{
+import dao.UsuarioDAO;
+import modelo.*;
+
+public class JDBCUsuarioDAO extends JDBCGenericDAO<Usuario, String> implements UsuarioDAO{
 
 
 

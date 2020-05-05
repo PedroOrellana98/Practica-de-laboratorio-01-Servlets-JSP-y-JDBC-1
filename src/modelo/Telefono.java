@@ -1,4 +1,4 @@
-package ec.edu.ups.modelo;
+package modelo;
 
 import java.io.Serializable;
 
@@ -11,7 +11,9 @@ public class Telefono implements Serializable{
 	private String operadora;
 
 	
-	
+	public Telefono() {
+		
+	}
 	
 	public Telefono(String codigo, String numero, String tipo, String operadora) {
 		super();

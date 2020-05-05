@@ -1,4 +1,4 @@
-package ec.ups.edu.dao;
+package dao;
 
 public abstract class DAOFactory {
 

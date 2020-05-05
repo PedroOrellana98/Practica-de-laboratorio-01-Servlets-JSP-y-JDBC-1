@@ -1,4 +1,4 @@
-package ec.ups.edu.dao;
+package dao;
 
 import ec.edu.usp.controlador.*;
 
@@ -13,13 +13,13 @@ public class JDBCDAOFactory extends DAOFactory{
 	@Override
 	public UsuarioDAO getUsuarioDAO() {
 		// TODO Auto-generated method stub
-		return (UsuarioDAO) new JDBCUsuarioDAO();
+		return  new JDBCUsuarioDAO();
 	}
 
 	@Override
 	public TelefonoDAO getTelefonoDAO() {
 		// TODO Auto-generated method stub
-		return (TelefonoDAO) new JDBCTelefonoDAO();
+		return new JDBCTelefonoDAO();
 	}
 
 
