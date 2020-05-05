@@ -11,7 +11,7 @@ import modelo.Telefono;
 
 
 public class JDBCTelefonoDAO extends JDBCGenericDAO<Telefono, String> implements TelefonoDAO{
-
+	/*
 	@Override
 	public void createTable() {
 		// TODO Auto-generated method stub
@@ -26,7 +26,7 @@ public class JDBCTelefonoDAO extends JDBCGenericDAO<Telefono, String> implements
 				"	FOREIGN KEY (usu_cedula)\r\n" + 
 				"		REFERENCES  Usuario (cedula)\r\n" + 
 				")");
-	}
+	}*/
 	
 	@Override
 	public void create(Telefono entity) {

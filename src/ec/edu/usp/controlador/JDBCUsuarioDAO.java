@@ -12,7 +12,7 @@ public class JDBCUsuarioDAO extends JDBCGenericDAO<Usuario, String> implements U
 
 
 
-	@Override
+	/*@Override
 	public void createTable() {
 		// TODO Auto-generated method stub
 		jdbc.update("DROP TABLE IF EXISTS Usuario");
@@ -24,7 +24,7 @@ public class JDBCUsuarioDAO extends JDBCGenericDAO<Usuario, String> implements U
 				"	contrasena varchar(255) not null\r\n" + 
 				")");
 	}
-
+	*/
 	
 	@Override
 	public void create(Usuario entity) {
@@ -41,7 +41,7 @@ public class JDBCUsuarioDAO extends JDBCGenericDAO<Usuario, String> implements U
 		ResultSet rs = jdbc.query("SELECT * FROM Usuario WHERE cedula="+id);
 		try {
 			if (rs != null && rs.next()) {
-				usu = new Usuario(rs.getString("cedula"), rs.getString("nombre"), rs.getString("apellido"), rs.getString("correo"));
+				usu = new Usuario(rs.getString("cedula"), rs.getString("nombre"), rs.getString("apellido"), rs.getString("correo"), rs.getString("contrasena"));
 			}
 		}catch(SQLException e) {
 			System.out.println("Error al leer usuario >>"+e.getMessage());
@@ -70,7 +70,7 @@ public class JDBCUsuarioDAO extends JDBCGenericDAO<Usuario, String> implements U
 		ResultSet rs = jdbc.query("SELECT * FROM Usuario");
 		try {
 			while(rs.next()) {
-				list.add(new Usuario(rs.getString("cedula"), rs.getString("nombre"), rs.getString("correo"), rs.getString("contrasena")));
+				list.add(new Usuario(rs.getString("cedula"), rs.getString("nombre"), rs.getString("correo"), rs.getString("contrasena"), rs.getString("contrasena")));
 			}
 		}catch(SQLException e) {
 			System.out.println(">>>Warning (JDBCUsuarioDAO:find): " + e.getMessage());

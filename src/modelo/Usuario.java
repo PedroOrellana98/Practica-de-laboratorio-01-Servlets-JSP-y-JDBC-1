@@ -19,11 +19,12 @@ public class Usuario implements Serializable{
 		
 	}
 	
-	public Usuario(String cedula, String nombre, String apellido, String correo) {
+	public Usuario(String cedula, String nombre, String apellido, String correo, String pwd) {
 		this.setCedula(cedula);
 		this.setNombre(nombre);
 		this.setApellido(apellido);
 		this.setCorreo(correo);
+		this.setPwd(pwd);
 	}
 	
 	
