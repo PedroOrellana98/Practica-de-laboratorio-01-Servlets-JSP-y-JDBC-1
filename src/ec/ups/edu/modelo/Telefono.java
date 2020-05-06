@@ -1,4 +1,4 @@
-package modelo;
+package ec.ups.edu.modelo;
 
 import java.io.Serializable;
 

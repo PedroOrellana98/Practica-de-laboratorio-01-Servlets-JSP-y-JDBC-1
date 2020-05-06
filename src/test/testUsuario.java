@@ -1,7 +1,7 @@
 package test;
 
-import dao.*;
-import modelo.*;
+import ec.ups.edu.dao.*;
+import ec.ups.edu.modelo.*;
 
 public class testUsuario {
 

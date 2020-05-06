@@ -1,4 +1,4 @@
-package ec.edu.ups.servlets;
+package ec.ups.edu.servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;

@@ -1,6 +1,6 @@
 package ec.edu.usp.controlador;
 
-import dao.GenericDAO;
+import ec.ups.edu.dao.GenericDAO;
 
 public abstract class JDBCGenericDAO<T, ID> implements GenericDAO<T, ID>{
 	

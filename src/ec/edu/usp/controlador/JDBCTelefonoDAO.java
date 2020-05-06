@@ -6,8 +6,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import dao.TelefonoDAO;
-import modelo.Telefono;
+import ec.ups.edu.dao.TelefonoDAO;
+import ec.ups.edu.modelo.Telefono;
+import ec.ups.edu.modelo.Usuario;
 
 
 public class JDBCTelefonoDAO extends JDBCGenericDAO<Telefono, String> implements TelefonoDAO{
@@ -58,7 +59,7 @@ public class JDBCTelefonoDAO extends JDBCGenericDAO<Telefono, String> implements
 	public void update(Telefono entity) {
 		// TODO Auto-generated method stub
 		jdbc.update("UPDATE Telefono SET tel_numero = '" + entity.getNumero() + "', tel_tipo = '" +  entity.getTipo() + 
-				"', tel_operadora = '" + entity.getOperadora() + "'WHERE tel_codigo " + entity.getCodigo());
+				"', tel_operadora = '" + entity.getOperadora() + "'WHERE tel_codigo = " + entity.getCodigo());
 	}
 
 	@Override
@@ -82,6 +83,23 @@ public class JDBCTelefonoDAO extends JDBCGenericDAO<Telefono, String> implements
 		
 		
 		return listTelefono;
+	}
+	
+	public String cdiUsuario(String nombre, String apellido) {
+		String cdi = "";
+		Usuario usu = null;
+		ResultSet rs = jdbc.query("SELECT * FROM Usuario where nombre=" + nombre + " AND Apellido= " + apellido  );
+		try {
+			if(rs != null) {
+				usu = new Usuario(rs.getString("cedula"), rs.getString("nombre"), rs.getString("correo"), rs.getString("contrasena"), rs.getString("contrasena"));
+				cdi = usu.getCedula();
+			}
+			
+		}catch(SQLException e) {
+			System.out.println(">>>WARNING (JDBCTELFONO: CDIUSUARIO): " + e.getMessage());
+		}
+		
+		return cdi;
 	}
 
 	

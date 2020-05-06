@@ -1,4 +1,4 @@
-package dao;
+package ec.ups.edu.dao;
 
 import ec.edu.usp.controlador.*;
 

@@ -1,9 +1,9 @@
-package modelo;
+package ec.ups.edu.modelo;
 
 import java.io.Serializable;
 import java.util.List;
 
-import modelo.*;
+import ec.ups.edu.modelo.*;
 
 public class Usuario implements Serializable{
 	
@@ -13,6 +13,7 @@ public class Usuario implements Serializable{
 	private String apellido;
 	private String correo;
 	private String pwd;
+
 
 	
 	public Usuario() {
@@ -26,8 +27,7 @@ public class Usuario implements Serializable{
 		this.setCorreo(correo);
 		this.setPwd(pwd);
 	}
-	
-	
+
 	public String getCedula() {
 		return cedula;
 	}
@@ -58,14 +58,12 @@ public class Usuario implements Serializable{
 	public void setPwd(String pwd) {
 		this.pwd = pwd;
 	}
+	
 
 	@Override
 	public String toString() {
 		return "Usuario [cedula=" + cedula + ", nombre=" + nombre + ", apellido=" + apellido + ", correo=" + correo
 				+ ", pwd=" + pwd + "]";
 	}
-
-	
-
 
 }

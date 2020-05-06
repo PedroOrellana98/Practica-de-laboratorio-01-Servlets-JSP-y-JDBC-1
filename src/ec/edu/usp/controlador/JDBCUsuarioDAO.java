@@ -5,8 +5,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import dao.UsuarioDAO;
-import modelo.*;
+import ec.ups.edu.dao.UsuarioDAO;
+import ec.ups.edu.modelo.*;
 
 public class JDBCUsuarioDAO extends JDBCGenericDAO<Usuario, String> implements UsuarioDAO{
 
@@ -74,6 +74,9 @@ public class JDBCUsuarioDAO extends JDBCGenericDAO<Usuario, String> implements U
 			}
 		}catch(SQLException e) {
 			System.out.println(">>>Warning (JDBCUsuarioDAO:find): " + e.getMessage());
+		}
+		for(Usuario usu: list) {
+			System.out.println(usu.getCedula() +", "+ usu.getNombre()+", "+usu.getNombre());
 		}
 		return list;
 	}
