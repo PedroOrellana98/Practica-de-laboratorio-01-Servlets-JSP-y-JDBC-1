@@ -10,4 +10,5 @@ public interface GenericDAO<T, ID> {
 	public void update(T entity);
 	public void delete(T entity);
 	public List<T> find();
+	int buscar(String email, String pwd);
 }

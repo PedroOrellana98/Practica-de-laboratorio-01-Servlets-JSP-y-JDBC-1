@@ -1,4 +1,4 @@
-package ec.ups.edu.servlets;
+package ec.ups.edu.controlador;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -10,7 +10,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import ec.edu.usp.controlador.ContextJDBC;
+import ec.edu.usp.mysql.ContextJDBC;
+import ec.ups.edu.dao.DAOFactory;
+import ec.ups.edu.dao.TelefonoDAO;
+import ec.ups.edu.dao.UsuarioDAO;
 
 /**
  * Servlet implementation class LoginServlet
@@ -40,24 +43,41 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.setContentType("text/html");
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+		response.setContentType("text/html:charset=UTF-8");
 		
-		PrintWriter out = response.getWriter();
+		UsuarioDAO usuDAO = DAOFactory.getFactory().getUsuarioDAO();
+		String email ="";
+		String pwd = "";
+		String url=null;
+		int i=0;
 		
-		String email = request.getParameter("email");
-		String password = request.getParameter("password");
+		String resp = request.getParameter("resp");
 		
-		request.getRequestDispatcher("/Practica-1/WebContent/inicio.html").include(request, response);  
+		if(resp.equals("Login")) {
+			email = request.getParameter("user");
+			pwd = request.getParameter("password");
+			
+			i = usuDAO.buscar(email, pwd);
+			System.out.println(i);
+		}
+		try {
+			if(i>0) {
+				//TelefonoDAO telDAO = DAOFactory.getFactory().getTelefonoDAO();
+				
+				//request.setAttribute("Telefono", telDAO.find());
+				getServletContext().getRequestDispatcher("/JSPs/IndexUsuario.jsp").forward(request, response);
+			}else {
+				getServletContext().getRequestDispatcher("/Practica-1//welcome.html").forward(request, response);
+			}
+		}catch(Exception e) {
+			System.out.println(">>>WARNING (LOGINSERVEL):DOPOS: T"+e.getMessage());
+		}
+		
+		
 				
 		
-		if(email =="admin" & password =="123") {
-			response.sendRedirect("/Practica-1/WebContent/welcome.html");
-			
-		}else {
-			out.println("email o contrasena son incorrectos");
-			RequestDispatcher rs = request.getRequestDispatcher("index.html");
-			rs.include(request, response);
-		}
+	
 	}
 
 }

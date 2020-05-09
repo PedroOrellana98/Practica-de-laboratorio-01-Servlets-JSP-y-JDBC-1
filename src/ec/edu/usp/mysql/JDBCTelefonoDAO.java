@@ -1,4 +1,4 @@
-package ec.edu.usp.controlador;
+package ec.edu.usp.mysql;
 
 import java.sql.ResultSet;
 
@@ -75,7 +75,7 @@ public class JDBCTelefonoDAO extends JDBCGenericDAO<Telefono, String> implements
 		ResultSet rs = jdbc.query("SELECT * FROM Telefono");
 		try {
 			while(rs.next()) {
-				listTelefono.add(new Telefono(String.valueOf(rs.getInt("id")), rs.getString("tel_numero"), rs.getString("tel_tipo"), rs.getString("tel_operadora")));
+				listTelefono.add(new Telefono(String.valueOf(rs.getInt("tel_codigo")), rs.getString("tel_numero"), rs.getString("tel_tipo"), rs.getString("tel_operadora")));
 			}
 		}catch(SQLException e) {
 			System.out.println(">>> WARNING (JDBCTelefonoDAO: find) : " + e.getMessage());
@@ -100,6 +100,12 @@ public class JDBCTelefonoDAO extends JDBCGenericDAO<Telefono, String> implements
 		}
 		
 		return cdi;
+	}
+
+	@Override
+	public int buscar(String email, String pwd) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 	

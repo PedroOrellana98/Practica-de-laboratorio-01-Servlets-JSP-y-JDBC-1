@@ -1,4 +1,4 @@
-package ec.edu.usp.controlador;
+package ec.edu.usp.mysql;
 
 import java.sql.DriverManager;
 import java.sql.Connection;
@@ -13,7 +13,7 @@ public class ContextJDBC {
 	private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
 	private static final String URL = "jdbc:mysql://localhost:3306/agenda";
 	private static final String USER = "root";
-	private static final String pass = "";
+	private static final String pass = "cuenca";
 	private static ContextJDBC jdbc1 = null;
 	private static ContextJDBC jdbc2 = null;
 	

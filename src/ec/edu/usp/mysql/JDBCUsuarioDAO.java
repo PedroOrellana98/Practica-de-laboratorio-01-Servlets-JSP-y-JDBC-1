@@ -1,4 +1,4 @@
-package ec.edu.usp.controlador;
+package ec.edu.usp.mysql;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -29,7 +29,7 @@ public class JDBCUsuarioDAO extends JDBCGenericDAO<Usuario, String> implements U
 	@Override
 	public void create(Usuario entity) {
 		// TODO Auto-generated method stub
-		jdbc.update("INSERT Usuario VALUES ('"+entity.getCedula()+"','" +entity.getNombre()+
+		jdbc1.update("INSERT Usuario VALUES ('"+entity.getCedula()+"','" +entity.getNombre()+
 				"','"+entity.getApellido()+"','"+ entity.getCorreo()+"','" + entity.getPwd()+"')");
 	}
 
@@ -37,11 +37,11 @@ public class JDBCUsuarioDAO extends JDBCGenericDAO<Usuario, String> implements U
 	@Override
 	public Usuario read(String id) {
 		// TODO Auto-generated method stub
-		Usuario usu = null;
-		ResultSet rs = jdbc.query("SELECT * FROM Usuario WHERE cedula="+id);
+		Usuario usuOBJ = null;
+		ResultSet rs = jdbc1.query("SELECT * FROM Usuario WHERE cedula="+id);
 		try {
 			if (rs != null && rs.next()) {
-				usu = new Usuario(rs.getString("cedula"), rs.getString("nombre"), rs.getString("apellido"), rs.getString("correo"), rs.getString("contrasena"));
+				usuOBJ = new Usuario(rs.getString("cedula"), rs.getString("nombre"), rs.getString("apellido"), rs.getString("correo"), rs.getString("contrasena"));
 			}
 		}catch(SQLException e) {
 			System.out.println("Error al leer usuario >>"+e.getMessage());
@@ -79,6 +79,27 @@ public class JDBCUsuarioDAO extends JDBCGenericDAO<Usuario, String> implements U
 			System.out.println(usu.getCedula() +", "+ usu.getNombre()+", "+usu.getNombre());
 		}
 		return list;
+	}
+
+
+	@Override
+	public int buscar(String email, String pwd) {
+		// TODO Auto-generated method stub
+		
+		System.out.println("Correo:...."+ email.toString());
+		int i=0;
+		Usuario usuObj = null;
+		ResultSet rs = jdbc1.query("SELECT * FROM Usuario where correo="+"'"+email+"'"+"AND contrasena="+"'"+pwd+"'");
+		try {
+			if( rs != null && rs.next()) {
+				i=1;
+				
+			}
+		}catch(SQLException e) {
+			System.out.println(">>>WARNING (JDBCUsuarioDAO): buscar" + e.getMessage());
+		}
+		
+		return i;
 	}
 
 
