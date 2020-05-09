@@ -13,12 +13,12 @@
 	</div>
 	<div class="grad"></div>
 	<div class="header">
-			<div>Bienvenidos<span></span></div><br>
+			<div>Bienvenido<span></span></div><br>
 	</div>
 	<div class="login">
 				<h1><a href="/Practica-1/JSPs/CrearUsuario.jsp">Registrarse</a></h1>
 				<h1><a href="/Practica-1/JSPs/Login.jsp">Log In</a></h1>
-				<h1><a href="">Modo Invitado</a></h1>
+				<h1><a href="/Practica-1/JSPs/ModoInvitado.jsp">Modo Invitado</a></h1>
 		</div>
 </body>
 </html>

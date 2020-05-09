@@ -61,6 +61,7 @@ public class CrearUsuario extends HttpServlet {
 			user = new Usuario(cedula, nombre, apellido, correo, pwd);
 			
 			usuDAO.create(user);
+			getServletContext().getRequestDispatcher("/JSPs/ExitoCreacion.jsp").forward(request, response);
 		}
 	}
 
