@@ -31,6 +31,7 @@
 				<td>${u.operadora}</td>
 			</tr>
 		</c:forEach>
+	
 	</tbody>
 </table>
 </form>
