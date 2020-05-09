@@ -133,6 +133,7 @@ button {
 	font-size: 16px;
 	font-weight: 400;
 	padding: 4px;
+	position: center;
 }
 
 .login input[type=password]{

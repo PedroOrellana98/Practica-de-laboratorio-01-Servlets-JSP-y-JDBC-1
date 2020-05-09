@@ -63,12 +63,12 @@ public class LoginServlet extends HttpServlet {
 		}
 		try {
 			if(i>0) {
-				//TelefonoDAO telDAO = DAOFactory.getFactory().getTelefonoDAO();
+				TelefonoDAO telDAO = DAOFactory.getFactory().getTelefonoDAO();
 				
-				//request.setAttribute("Telefono", telDAO.find());
-				getServletContext().getRequestDispatcher("/JSPs/IndexUsuario.jsp").forward(request, response);
+				request.setAttribute("telefono", telDAO.find());
+				getServletContext().getRequestDispatcher("ListarTelefonosUsuario.java").forward(request, response);
 			}else {
-				getServletContext().getRequestDispatcher("/Practica-1//welcome.html").forward(request, response);
+				getServletContext().getRequestDispatcher("/Practica-1/inicio.jsp").forward(request, response);
 			}
 		}catch(Exception e) {
 			System.out.println(">>>WARNING (LOGINSERVEL):DOPOS: T"+e.getMessage());

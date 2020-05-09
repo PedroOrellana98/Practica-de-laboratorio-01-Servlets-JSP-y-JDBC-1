@@ -10,9 +10,18 @@
 <link rel="stylesheet"  href="/Practica-1/CONFIG/Style/styleLoggedOn.css" type="text/css">
 </head>
 <body>
-<h1>Login con exito</h1>
+<c:set var="t1" scope="request" value="${requestScope['telefonos']}"/>
+<%/* <h1>Login con exito</h1> */%>
 <form>
-	<c:set var="lista" scope="request" value="${requestScope['telefono']}"/>
+	<div class="header">
+		<h1>Bienvenido</h1>
+	</div>
+	<div class="topnav">
+		<a href="">Home</a>
+		<a href="">Buscar</a>
+		<a href="" style="float:right">Sing out</a>
+	</div>
+	
 	<table class="container">
 	<thead>
 		<tr>
@@ -23,19 +32,16 @@
 		</tr>
 	</thead>
 	<tbody>
-	<%/*
-	
-		<c:forEach var="telf" item="${lista}">
+		<c:forEach var="telf" items="${t1}">
 			<tr>	
-				<td>${u.codigo}</td>
-				<td>${u.numero}</td>
-				<td>${u.tipo}</td>
-				<td>${u.operadora}</td>
+				<td>${telf.codigo}</td>
+				<td>${telf.numero}</td>
+				<td>${telf.tipo}</td>
+				<td>${telf.operadora}</td>
 			</tr>
 		</c:forEach>
-		*/%>
 	</tbody>
-</table>
+	</table>
 </form>
 
 </body>

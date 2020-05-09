@@ -103,6 +103,12 @@ public class JDBCUsuarioDAO extends JDBCGenericDAO<Usuario, String> implements U
 	}
 
 
+	@Override
+	public String cedula(String cdi) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
-	
+
+
 }

@@ -17,6 +17,7 @@
 		</div>
 		<br>
 		<div class="login">
+				<h1>Registrar Usuario</h1><br>
 				<input type="text" placeholder="Nombre" name="nombre" required><br>
 				<input type="text" placeholder="Apellido" name="apellido" required><br>
 				<input type="text" placeholder="Cedula" name="cdi" required><br>

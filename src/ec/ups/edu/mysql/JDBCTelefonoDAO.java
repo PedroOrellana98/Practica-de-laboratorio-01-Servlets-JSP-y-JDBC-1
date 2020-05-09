@@ -76,6 +76,7 @@ public class JDBCTelefonoDAO extends JDBCGenericDAO<Telefono, String> implements
 		try {
 			while(rs.next()) {
 				listTelefono.add(new Telefono(String.valueOf(rs.getInt("tel_codigo")), rs.getString("tel_numero"), rs.getString("tel_tipo"), rs.getString("tel_operadora")));
+				System.out.println("desde el jdbcTelefono"+listTelefono);
 			}
 		}catch(SQLException e) {
 			System.out.println(">>> WARNING (JDBCTelefonoDAO: find) : " + e.getMessage());
@@ -85,22 +86,6 @@ public class JDBCTelefonoDAO extends JDBCGenericDAO<Telefono, String> implements
 		return listTelefono;
 	}
 	
-	public String cdiUsuario(String nombre, String apellido) {
-		String cdi = "";
-		Usuario usu = null;
-		ResultSet rs = jdbc.query("SELECT * FROM Usuario where nombre=" + nombre + " AND Apellido= " + apellido  );
-		try {
-			if(rs != null) {
-				usu = new Usuario(rs.getString("cedula"), rs.getString("nombre"), rs.getString("correo"), rs.getString("contrasena"), rs.getString("contrasena"));
-				cdi = usu.getCedula();
-			}
-			
-		}catch(SQLException e) {
-			System.out.println(">>>WARNING (JDBCTELFONO: CDIUSUARIO): " + e.getMessage());
-		}
-		
-		return cdi;
-	}
 
 	@Override
 	public int buscar(String email, String pwd) {
@@ -108,7 +93,25 @@ public class JDBCTelefonoDAO extends JDBCGenericDAO<Telefono, String> implements
 		return 0;
 	}
 
-	
+	@Override
+	public String cedula(String cdi) {
+		// TODO Auto-generated method stub
+		String ced = null;
+		Usuario us = null;
+		ced = us.getCedula();
+		ResultSet rs = jdbc1.query("SELECT * FROM Usuario WHERE cedula='"+us.getCedula());
+		try {
+			if( rs != null && rs.next()) {
+				ced = rs.getString("cedula");
+			}
+		}catch(SQLException e) {
+			
+		}
+		return ced;
+		
+
+	}
+
 
 	
 
