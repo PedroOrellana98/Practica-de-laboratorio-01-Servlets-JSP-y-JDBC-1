@@ -14,7 +14,7 @@
 	<div class="body"></div>
 		<div class="grad"></div>
 		<div class="header">
-			<div>Agenda<span></span></div>
+			<div><a href="/Practica-1/JSPs/Inicio.jsp" style="font-size:x-large">Agenda</a><span></span></div>
 		</div>
 		<br>
 		<div class="login">

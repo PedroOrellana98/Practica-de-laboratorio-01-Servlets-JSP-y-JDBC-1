@@ -16,9 +16,9 @@
 			<div>Bienvenidos<span></span></div><br>
 	</div>
 	<div class="login">
-				<h1>Registrarse</h1>
+				<h1><a href="/Practica-1/JSPs/CrearUsuario.jsp">Registrarse</a></h1>
 				<h1><a href="/Practica-1/JSPs/Login.jsp">Log In</a></h1>
-				<h1>Modo Invitado</h1>
+				<h1><a href="">Modo Invitado</a></h1>
 		</div>
 </body>
 </html>

@@ -49,7 +49,7 @@ public class LoginServlet extends HttpServlet {
 		UsuarioDAO usuDAO = DAOFactory.getFactory().getUsuarioDAO();
 		String email ="";
 		String pwd = "";
-		String url=null;
+		//String url=null;
 		int i=0;
 		
 		String resp = request.getParameter("resp");

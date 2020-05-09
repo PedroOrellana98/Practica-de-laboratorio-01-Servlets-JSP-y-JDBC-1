@@ -29,7 +29,7 @@ public class JDBCUsuarioDAO extends JDBCGenericDAO<Usuario, String> implements U
 	@Override
 	public void create(Usuario entity) {
 		// TODO Auto-generated method stub
-		jdbc1.update("INSERT Usuario VALUES ('"+entity.getCedula()+"','" +entity.getNombre()+
+		jdbc1.update("INSERT Usuario VALUES ('"+entity.getCedula()+"', '" +entity.getNombre()+
 				"','"+entity.getApellido()+"','"+ entity.getCorreo()+"','" + entity.getPwd()+"')");
 	}
 
