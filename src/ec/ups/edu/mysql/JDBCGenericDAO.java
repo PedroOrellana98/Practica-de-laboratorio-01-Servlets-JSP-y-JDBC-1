@@ -1,4 +1,4 @@
-package ec.edu.usp.mysql;
+package ec.ups.edu.mysql;
 
 import ec.ups.edu.dao.GenericDAO;
 

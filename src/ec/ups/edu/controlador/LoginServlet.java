@@ -10,10 +10,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import ec.edu.usp.mysql.ContextJDBC;
 import ec.ups.edu.dao.DAOFactory;
 import ec.ups.edu.dao.TelefonoDAO;
 import ec.ups.edu.dao.UsuarioDAO;
+import ec.ups.edu.mysql.ContextJDBC;
 
 /**
  * Servlet implementation class LoginServlet

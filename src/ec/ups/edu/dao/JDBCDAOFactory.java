@@ -1,6 +1,6 @@
 package ec.ups.edu.dao;
 
-import ec.edu.usp.mysql.*;
+import ec.ups.edu.mysql.*;
 
 public class JDBCDAOFactory extends DAOFactory{
 

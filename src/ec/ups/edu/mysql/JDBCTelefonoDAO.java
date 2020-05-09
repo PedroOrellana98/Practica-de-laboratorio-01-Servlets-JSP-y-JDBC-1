@@ -1,4 +1,4 @@
-package ec.edu.usp.mysql;
+package ec.ups.edu.mysql;
 
 import java.sql.ResultSet;
 
