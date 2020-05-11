@@ -29,12 +29,16 @@
 	<form action="/Practica-1/AgregarNumero?ced=${p2 }" method="POST">
 
 		<h1>Ingrese el numero para agregar:</h1>
-		<label for="operadora">Numero: </label> 
+		
+		<label for="numero">Numero: </label> 
 		<input type="text" name="numero" placeholder="numero"> 
-		<label for="operadora">Operadora:</label> 
-		<input type="text"name="operador" placeholder="operadora">
+		
+		<label for="operadora">Operadora: </label> 
+		<input type="text"name="operadora" placeholder="operadora">
+		
 		 <label for="tipo">Tipo:</label>
 		 <input type="text" name="tipo" placeholder="tipo">
+		 
 		<button type="submit" name="agregar" value="ingresar">ingresar</button>
 	</form>
 </div>

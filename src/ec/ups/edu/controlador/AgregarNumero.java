@@ -64,7 +64,7 @@ public class AgregarNumero extends HttpServlet {
 		
 		if(resp.equals("ingresar")) {
 			numero = request.getParameter("numero");
-			System.out.println("numero "+numero);
+			//System.out.println("numero "+numero);
 			
 			operadora = request.getParameter("operadora");
 			tipo = request.getParameter("tipo");
