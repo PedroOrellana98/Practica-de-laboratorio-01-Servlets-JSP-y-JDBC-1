@@ -10,7 +10,6 @@
 <link rel="stylesheet"  href="/Practica-1/CONFIG/Style/style.css" type="text/css">
 </head>
 <body>
-<form action="/Practica-1/LoginServlet" method="POST">
 	<div class="body"></div>
 		<div class="grad"></div>
 		<div class="header">
@@ -18,10 +17,11 @@
 		</div>
 		<br>
 		<div class="login">
+			<form action="/Practica-1/LoginServlet" method="POST">
 				<input type="text" placeholder="username" name="user" required><br>
 				<input type="password" placeholder="password" name="password" required><br>
 				<button type="submit" name="resp" value="Login">Login</button>
+			</form>
 		</div>
-</form>
 </body>
 </html>

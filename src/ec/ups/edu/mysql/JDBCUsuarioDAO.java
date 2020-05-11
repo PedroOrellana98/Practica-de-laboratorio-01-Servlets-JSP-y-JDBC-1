@@ -67,7 +67,7 @@ public class JDBCUsuarioDAO extends JDBCGenericDAO<Usuario, String> implements U
 		// TODO Auto-generated method stub
 		List<Usuario> list = new ArrayList<Usuario>();
 		//, usuario where usuario.cedula = telefono.tel_cedula
-		ResultSet rs = jdbc.query("SELECT * FROM Telefono");
+		ResultSet rs = jdbc.query("SELECT * FROM Usuario");
 		try {
 			while(rs.next()) {
 				list.add(new Usuario(rs.getString("cedula"), rs.getString("nombre"), rs.getString("correo"), rs.getString("contrasena"), rs.getString("contrasena")));
@@ -83,23 +83,22 @@ public class JDBCUsuarioDAO extends JDBCGenericDAO<Usuario, String> implements U
 
 
 	@Override
-	public int buscar(String email, String pwd) {
+	public Usuario buscar(String email, String pwd) {
 		// TODO Auto-generated method stub
 		
-		System.out.println("Correo:...."+ email.toString());
+		//System.out.println("Email: ------------- "+email.toString());
 		int i=0;
-		Usuario usuObj = null;
-		ResultSet rs = jdbc1.query("SELECT * FROM Usuario where correo="+"'"+email+"'"+"AND contrasena="+"'"+pwd+"'");
+		Usuario usuarioObject = null;
+		ResultSet rs = jdbc1.query("SELECT * FROM Usuario WHERE  correo=" +  "'" + email + "'" + "AND contrasena=" +  "'" + pwd + "'" );
 		try {
-			if( rs != null && rs.next()) {
+			if (rs != null && rs.next()) {
 				i=1;
-				
+				usuarioObject = new Usuario (rs.getString("cedula"), rs.getString("nombre"), rs.getString("apellido"),rs.getString("correo"), rs.getString("contrasena"));
 			}
-		}catch(SQLException e) {
-			System.out.println(">>>WARNING (JDBCUsuarioDAO): buscar" + e.getMessage());
+		} catch (SQLException e) {
+			System.out.println(">>>WARNING (JDBCUsuarioDAO:read): " + e.getMessage());
 		}
-		
-		return i;
+		return usuarioObject;
 	}
 
 
