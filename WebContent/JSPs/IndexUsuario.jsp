@@ -10,9 +10,10 @@
 <link rel="stylesheet"  href="/Practica-1/CONFIG/Style/styleLoggedOn.css" type="text/css">
 </head>
 <body>
-<c:set var="t1" scope="request" value="${requestScope['telefonos']}"/>
+<c:set var="t1" value="${requestScope['telefonos']}"/>
+
 <%/* <h1>Login con exito</h1> */%>
-<form>
+
 	<div class="header">
 		<h1>Bienvenido</h1>
 	</div>
@@ -42,7 +43,6 @@
 		</c:forEach>
 	</tbody>
 	</table>
-</form>
 
 </body>
 </html>

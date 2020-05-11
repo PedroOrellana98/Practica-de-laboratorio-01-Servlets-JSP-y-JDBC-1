@@ -1,6 +1,7 @@
 package ec.ups.edu.controlador;
 
 import java.io.IOException;
+
 import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
@@ -13,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import ec.ups.edu.dao.DAOFactory;
 import ec.ups.edu.dao.TelefonoDAO;
 import ec.ups.edu.dao.UsuarioDAO;
+import ec.ups.edu.modelo.Usuario;
 import ec.ups.edu.mysql.ContextJDBC;
 
 /**
@@ -47,9 +49,10 @@ public class LoginServlet extends HttpServlet {
 		response.setContentType("text/html:charset=UTF-8");
 		
 		UsuarioDAO usuDAO = DAOFactory.getFactory().getUsuarioDAO();
+		Usuario usuario = new Usuario();
 		String email ="";
 		String pwd = "";
-		//String url=null;
+		String url = null;
 		int i=0;
 		
 		String resp = request.getParameter("resp");
@@ -65,13 +68,14 @@ public class LoginServlet extends HttpServlet {
 			if(i>0) {
 				TelefonoDAO telDAO = DAOFactory.getFactory().getTelefonoDAO();
 				
-				request.setAttribute("telefono", telDAO.find());
-				getServletContext().getRequestDispatcher("ListarTelefonosUsuario.java").forward(request, response);
+				request.setAttribute("telefono", telDAO.cedula(usuario.getCedula()));
+				request.setAttribute("usuario", usuario);
+				getServletContext().getRequestDispatcher("/JSPs/IndexUsuario.jsp").forward(request, response);
 			}else {
 				getServletContext().getRequestDispatcher("/Practica-1/inicio.jsp").forward(request, response);
 			}
 		}catch(Exception e) {
-			System.out.println(">>>WARNING (LOGINSERVEL):DOPOS: T"+e.getMessage());
+			System.out.println(">>>WARNING (LOGINSERVEL):DOPOST: "+e.getMessage());
 		}
 		
 		

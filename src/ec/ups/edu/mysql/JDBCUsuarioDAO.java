@@ -66,8 +66,8 @@ public class JDBCUsuarioDAO extends JDBCGenericDAO<Usuario, String> implements U
 	public List<Usuario> find() {
 		// TODO Auto-generated method stub
 		List<Usuario> list = new ArrayList<Usuario>();
-		
-		ResultSet rs = jdbc.query("SELECT * FROM Usuario");
+		//, usuario where usuario.cedula = telefono.tel_cedula
+		ResultSet rs = jdbc.query("SELECT * FROM Telefono");
 		try {
 			while(rs.next()) {
 				list.add(new Usuario(rs.getString("cedula"), rs.getString("nombre"), rs.getString("correo"), rs.getString("contrasena"), rs.getString("contrasena")));

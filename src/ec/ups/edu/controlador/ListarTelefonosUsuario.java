@@ -20,21 +20,16 @@ import ec.ups.edu.modelo.Telefono;
 @WebServlet("/ListarTelefonosUsuario")
 public class ListarTelefonosUsuario extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
-	private TelefonoDAO telfDAO;
-	private UsuarioDAO usuDAO;
-	private List<Telefono> listaTelefono;
-	private String cdi ="";
+	private TelefonoDAO telDAO;
+	private List<Telefono> telList;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
     public ListarTelefonosUsuario() {
         super();
-        telfDAO = DAOFactory.getFactory().getTelefonoDAO();
-        usuDAO = DAOFactory.getFactory().getUsuarioDAO();
-        
         // TODO Auto-generated constructor stub
+        telDAO = DAOFactory.getFactory().getTelefonoDAO();
     }
 
 	/**
@@ -43,26 +38,29 @@ public class ListarTelefonosUsuario extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		
+		String url= null;
 		try {
+			telList = telDAO.find();
+			System.out.println("recuperando lsita de telefonos");
+			System.out.println(telList);
 			
-			listaTelefono = telfDAO.find();
+			request.setAttribute("telefonos", telList);
+			url="/JSPs/IndexUsuario.jsp";
 			
-			request.setAttribute("listaTelefono", listaTelefono);
-			System.out.println("desde el controlador"+listaTelefono);
-			getServletContext().getRequestDispatcher("/Practica-1/JSPs/IndexUsuario.jsp").forward(request, response);
 		}catch(Exception e) {
+			System.out.println("Problemas en listartel" + e.getMessage());
 		}
+		getServletContext().getRequestDispatcher(url).forward(request, response);
 		
 	}
 /*
-	/**
+	
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	/*
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
-*/
+
 }

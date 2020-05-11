@@ -76,7 +76,7 @@ public class JDBCTelefonoDAO extends JDBCGenericDAO<Telefono, String> implements
 		try {
 			while(rs.next()) {
 				listTelefono.add(new Telefono(String.valueOf(rs.getInt("tel_codigo")), rs.getString("tel_numero"), rs.getString("tel_tipo"), rs.getString("tel_operadora")));
-				System.out.println("desde el jdbcTelefono"+listTelefono);
+				//System.out.println("desde el jdbcTelefono"+listTelefono);
 			}
 		}catch(SQLException e) {
 			System.out.println(">>> WARNING (JDBCTelefonoDAO: find) : " + e.getMessage());
