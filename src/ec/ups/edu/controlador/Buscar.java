@@ -1,10 +1,6 @@
 package ec.ups.edu.controlador;
 
 import java.io.IOException;
-
-import java.io.PrintWriter;
-
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,22 +10,24 @@ import javax.servlet.http.HttpServletResponse;
 import ec.ups.edu.dao.DAOFactory;
 import ec.ups.edu.dao.TelefonoDAO;
 import ec.ups.edu.dao.UsuarioDAO;
+import ec.ups.edu.modelo.Telefono;
 import ec.ups.edu.modelo.Usuario;
-import ec.ups.edu.mysql.ContextJDBC;
 
 /**
- * Servlet implementation class LoginServlet
+ * Servlet implementation class BuscarPorCedula
  */
-@WebServlet("/LoginServlet")
-public class LoginServlet extends HttpServlet {
+@WebServlet("/BuscarPorCedula")
+public class Buscar extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public LoginServlet() {
+    public Buscar() {
         super();
         // TODO Auto-generated constructor stub
+        
+        
     }
 
 	/**
@@ -45,43 +43,40 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-		response.setContentType("text/html:charset=UTF-8");
-		
+		doGet(request, response);
 		UsuarioDAO usuDAO = DAOFactory.getFactory().getUsuarioDAO();
-		Usuario usuario = new Usuario();
-		String email ="";
-		String pwd = "";
-		String url = null;
-		int i=0;
-		
-		String resp = request.getParameter("resp");
-		
-		if(resp.equals("Login")) {
-			email = request.getParameter("user");
-			pwd = request.getParameter("password");
-			
-			i = usuDAO.buscar(email, pwd);
-			System.out.println(i);
-		}
-		try {
-			if(i>0) {
-				TelefonoDAO telDAO = DAOFactory.getFactory().getTelefonoDAO();
+		TelefonoDAO telDAO = DAOFactory.getFactory().getTelefonoDAO();
+		Telefono telefono = new Telefono();
+		String cedula = null;
+		String url= null;
+		/*
+		if(Integer.parseInt(request.getParameter("id")) == 1) {
+			if(request.getParameter("cedula") != null) {
+				System.out.println("cedula a buscar");
+				request.setAttribute("telefono", telDAO.cedula(request.getParameter("cedula")));
+				url = "/Practica-1/JSPs/ModoInvitado.jsp";
+				getServletContext().getRequestDispatcher(url).forward(request, response);;
 				
-				//request.setAttribute("telefono", telDAO.cedula(usuario.getCedula()));
-				//request.setAttribute("usuario", usuario);
-				getServletContext().getRequestDispatcher("/JSPs/IndexUsuario.jsp").forward(request, response);
-			}else {
-				getServletContext().getRequestDispatcher("/Practica-1/inicio.jsp").forward(request, response);
 			}
-		}catch(Exception e) {
-			System.out.println(">>>WARNING (LOGINSERVEL):DOPOST: "+e.getMessage());
-		}
-		
-		
+		}else {
+			if(Integer.parseInt(request.getParameter("id")) == 2) {
 				
+			}else {
+				
+			}
+		}*/
 		
-	
+		try {
+			cedula = request.getParameter("cedula");
+			telefono = telDAO.read(cedula);
+			//telDAO;
+			request.setAttribute("telefono", telefono);
+			url ="/JSPs/Busquedas.jsp";
+		}catch(Exception e) {
+			System.out.println("BuscarCedulaServlet error: " + e.getMessage());
+		}
+		getServletContext().getRequestDispatcher(url).forward(request, response);;
+		
 	}
 
 }

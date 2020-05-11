@@ -21,6 +21,7 @@ import ec.ups.edu.modelo.Telefono;
 public class ListarTelefonosUsuario extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private TelefonoDAO telDAO;
+	private UsuarioDAO usuDAO;
 	private List<Telefono> telList;
        
     /**
@@ -30,6 +31,7 @@ public class ListarTelefonosUsuario extends HttpServlet {
         super();
         // TODO Auto-generated constructor stub
         telDAO = DAOFactory.getFactory().getTelefonoDAO();
+
     }
 
 	/**
@@ -41,6 +43,7 @@ public class ListarTelefonosUsuario extends HttpServlet {
 		String url= null;
 		try {
 			telList = telDAO.find();
+			
 			System.out.println("recuperando lsita de telefonos");
 			System.out.println(telList);
 			

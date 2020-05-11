@@ -41,10 +41,10 @@ public class JDBCTelefonoDAO extends JDBCGenericDAO<Telefono, String> implements
 		// TODO Auto-generated method stub
 		
 		Telefono t = null;
-		ResultSet rs = jdbc.query("SELECT * FROM Telefono where tel_codigo=" + id);
+		ResultSet rs = jdbc.query("SELECT * FROM Telefono where tel_cedula='" + id+"'");
 		
 		try {
-			if(rs != null ) {
+			if(rs.next()) {
 				t = new Telefono(String.valueOf(rs.getInt("tel_codigo")), rs.getString("tel_numero"), rs.getString("tel_tipo"), rs.getString("tel_operadora"));
 			}
 		}catch(SQLException e) {
@@ -99,7 +99,7 @@ public class JDBCTelefonoDAO extends JDBCGenericDAO<Telefono, String> implements
 		String ced = null;
 		Usuario us = null;
 		ced = us.getCedula();
-		ResultSet rs = jdbc1.query("SELECT * FROM Usuario WHERE cedula='"+us.getCedula());
+		ResultSet rs = jdbc1.query("SELECT * FROM Usuario WHERE cedula='"+cdi+"'");
 		try {
 			if( rs != null && rs.next()) {
 				ced = rs.getString("cedula");

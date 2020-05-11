@@ -46,7 +46,7 @@ public class JDBCUsuarioDAO extends JDBCGenericDAO<Usuario, String> implements U
 		}catch(SQLException e) {
 			System.out.println("Error al leer usuario >>"+e.getMessage());
 		}
-		return null;
+		return usuOBJ;
 	}
 
 	@Override

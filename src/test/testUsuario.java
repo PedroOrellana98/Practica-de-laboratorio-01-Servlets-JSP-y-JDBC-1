@@ -24,7 +24,9 @@ public class testUsuario {
 		usuDAO.delete(u2);
 		System.out.println("Eliminando un usuario: " + usuDAO.find());
 		 */
-		System.out.println(telDAO.find());
+		System.out.println(telDAO.read("1400919302"));
+		
+		
 	}
 
 }

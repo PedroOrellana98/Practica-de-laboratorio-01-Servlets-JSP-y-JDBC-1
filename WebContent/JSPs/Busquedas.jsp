@@ -1,49 +1,26 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>   
-<!DOCTYPE html">
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>  
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bienvenido</title>
+<title>Busqueda</title>
 <link rel="stylesheet"  href="/Practica-1/CONFIG/Style/styleLoggedOn.css" type="text/css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body>
-<form action="/Practica-1/src/ec/ups/edu/controlador/ListarTelefonosUsuario.java" method="GET">
-<c:set var="t1" value="${requestScope['telefonos']}"/>
-
-<%/* <h1>Login con exito</h1> */%>
+<c:set var="lista" scope="request" value="${telefono}" />
+	<h1>buscar</h1>
 	
-	<div class="header">
-		<div class="w3-display-topmiddle w3-container">
-		<img src="https://www.pavilionweb.com/wp-content/uploads/2017/03/man-300x300.png" alt="John" style="width:100%">
-  		<h1>Bienvenido</h1>
-		</div>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-	</div>
 	<div class="topnav">
 		<a href="/Practica-1/JSPs/Inicio.jsp">Home</a>
-		<a href="/Practica-1/JSPs/Busquedas.jsp">Busqueda</a>
-		<a href="" style="float:right">Sing out</a>
 	</div>
-	
+	<div>
+		<input type="text" placeholder="ingrese cedula" name="cedula"><br>
+		<button type="submit">Buscar</button> 
+	</div>
 	<table class="container">
 	<thead>
 		<tr>
@@ -54,7 +31,7 @@
 		</tr>
 	</thead>
 	<tbody>
-		<c:forEach var="telf" items="${t1}">
+		<c:forEach var="telf" items="${lista}">
 			<tr>	
 				<td>${telf.codigo}</td>
 				<td>${telf.numero}</td>
@@ -64,6 +41,6 @@
 		</c:forEach>
 	</tbody>
 	</table>
-</form>
+
 </body>
 </html>
