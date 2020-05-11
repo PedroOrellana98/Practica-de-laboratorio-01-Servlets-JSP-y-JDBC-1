@@ -33,8 +33,9 @@ public class JDBCTelefonoDAO extends JDBCGenericDAO<Telefono, String> implements
 	@Override
 	public void create(Telefono entity) {
 		// TODO Auto-generated method stub
-		jdbc.update("INSERT Telefono VALUES ("+entity.getCodigo() +",'" + entity.getNumero() 
-		+ "','" + entity.getTipo() + "','" + entity.getOperadora() + "')");
+		jdbc1.update("INSERT into telefono (tel_cedula, tel_numero, tel_tipo, tel_operadora) values"
+				+ " ( '" + entity.getCodigo() + "', '"
+		+ entity.getNumero() + "','"+entity.getTipo()+"','"+entity.getOperadora()+"' )");
 	}
 
 	@Override

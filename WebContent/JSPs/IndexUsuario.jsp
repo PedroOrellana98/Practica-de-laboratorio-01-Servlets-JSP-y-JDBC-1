@@ -21,6 +21,7 @@
 		<div class="w3-display-topmiddle w3-container">
 		<img src="https://www.pavilionweb.com/wp-content/uploads/2017/03/man-300x300.png" alt="John" style="width:100%">
   		<h1>Bienvenido</h1>
+  		<h1> ${ p2.nombre } ${p2.apellido }</h1>
   			<ul>
   				<li><a href="/Practica-1/controladorSesiones?id=2&idU=${p2.cedula }"></a>
   			</ul>
@@ -40,12 +41,16 @@
 		<br>
 		<br>
 		<br>
+		<br>
+		<br>
 	</div>
 	<div class="topnav">
 		<a href="/Practica-1/JSPs/Inicio.jsp">Home</a>
 		<a href="/Practica-1/JSPs/Busquedas.jsp">Busqueda</a>
+		<a href="/Practica-1/controladorSesiones?id=1&c=${p2.cedula }">Agregar Numero</a>
 		<a href="" style="float:right">Sing out</a>
 	</div>
+	
 	
 	<table class="container">
 	<thead>
@@ -63,7 +68,7 @@
 				<td>${telf.numero}</td>
 				<td>${telf.tipo}</td>
 				<td>${telf.operadora}</td>
-				
+				<td>-</td>
 			</tr>
 		</c:forEach>
 	</tbody>

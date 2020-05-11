@@ -48,7 +48,7 @@ public class controladorSesiones extends HttpServlet {
 			request.setAttribute("idc", request.getParameter("c"));
 			request.setAttribute("usuarios", usuDAO.find());
 			
-			getServletContext().getRequestDispatcher("/JSPs/CrearUsuario.jsp").forward(request, response);
+			getServletContext().getRequestDispatcher("/JSPs/Agregar.jsp").forward(request, response);
 		}else if(Integer.parseInt(request.getParameter("id"))==2) {
 			
 			usuario = usuarioDao.read(request.getParameter("idU"));

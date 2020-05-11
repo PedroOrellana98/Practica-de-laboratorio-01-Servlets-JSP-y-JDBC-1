@@ -25,10 +25,13 @@ public class testUsuario {
 		System.out.println("Eliminando un usuario: " + usuDAO.find());
 		 */
 		//System.out.println(telDAO.read("1400919302"));
-		if( usuDAO.buscar("ralexjessiel@gmail.com", "123") != null) {
+		/*if( usuDAO.buscar("ralexjessiel@gmail.com", "123") != null) {
 			System.out.println("Si existe");
-		}
+		}*/
 		//System.out.println(usuDAO.buscar("ralexjessiel@gmail.com", "123"));
+		Telefono t1 = new Telefono("1400919302", "09859563", "celular","claro");
+		telDAO.create(t1);
+		System.out.println(telDAO.find());
 		
 		
 	}
