@@ -12,8 +12,8 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body>
-<form action="/Practica-1/src/ec/ups/edu/controlador/ListarTelefonosUsuario.java" method="GET">
-<c:set var="t1" value="${requestScope['telefonos']}"/>
+<c:set var="t1" value="${requestScope['telefono']}"/>
+<c:set var="p2" value="${requestScope['usuario'] }"/>
 
 <%/* <h1>Login con exito</h1> */%>
 	
@@ -21,6 +21,9 @@
 		<div class="w3-display-topmiddle w3-container">
 		<img src="https://www.pavilionweb.com/wp-content/uploads/2017/03/man-300x300.png" alt="John" style="width:100%">
   		<h1>Bienvenido</h1>
+  			<ul>
+  				<li><a href="/Practica-1/controladorSesiones?id=2&idU=${p2.cedula }"></a>
+  			</ul>
 		</div>
 		<br>
 		<br>
@@ -60,10 +63,10 @@
 				<td>${telf.numero}</td>
 				<td>${telf.tipo}</td>
 				<td>${telf.operadora}</td>
+				
 			</tr>
 		</c:forEach>
 	</tbody>
 	</table>
-</form>
 </body>
 </html>

@@ -56,34 +56,36 @@ public class LoginServlet extends HttpServlet {
 		UsuarioDAO usuarioDao = DAOFactory.getFactory().getUsuarioDAO();
 		String correo = "";
 		String contrasena = "";
-		String url=null;
-		int i=0;
-	
-		
+		String url = null;
+		int i = 0;
+
 		String accion = request.getParameter("resp");
 		Usuario user = new Usuario();
 		HttpSession sesion = request.getSession(true);
-		
-		if(accion.equals("Login")) {
-			correo = request.getParameter("username");
+
+		sesion.setAttribute("accesos", sesion.getId());
+		System.out.println("ID sesion: " + String.valueOf(sesion.getId()));
+		if (accion.equals("Login")) {
+			correo = request.getParameter("user");
 			contrasena = request.getParameter("password");
 			user = usuarioDao.buscar(correo, contrasena);
-			
+			System.out.println("retorno de usuario: "+ usuarioDao.buscar(correo, contrasena));
 			try {
-				if(user != null) {
+				if (user != null) {
 					TelefonoDAO telfDAO = DAOFactory.getFactory().getTelefonoDAO();
-					
+
 					request.setAttribute("telefono", telfDAO.buscarCedula(user.getCedula()));
 					request.setAttribute("usuario", user);
 					getServletContext().getRequestDispatcher("/JSPs/IndexUsuario.jsp").forward(request, response);
-				}else {
-					getServletContext().getRequestDispatcher("/JSP/Login.jsp").forward(request, response);
-				}
-			}catch(Exception e) {
+				} 
+			} catch (Exception e) {
 				System.out.println("Error en el login: " + e.getMessage());
 			}
-			
+		}else {
+			getServletContext().getRequestDispatcher("/JSPs/Login.jsp").forward(request, response);
 		}
+		
+
 	}
 
 }

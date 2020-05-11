@@ -52,12 +52,12 @@ public class controladorSesiones extends HttpServlet {
 		}else if(Integer.parseInt(request.getParameter("id"))==2) {
 			
 			usuario = usuarioDao.read(request.getParameter("idU"));
-			request.setAttribute("telefonos", telfDAO.buscarCedula(usuario.getCedula()));
+			request.setAttribute("telefono", telfDAO.buscarCedula(usuario.getCedula()));
 			request.setAttribute("usuario", usuario);
 			
 			getServletContext().getRequestDispatcher("/JSPs/IndexUsuario.jsp").forward(request, response);
 		}
-		
+		//No tocar
 		if(Integer.parseInt(request.getParameter("id"))==3) {
 			System.out.println("Ingresando...");
 			request.setAttribute("telefonos", telfDAO.find());
