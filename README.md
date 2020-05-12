@@ -66,7 +66,7 @@ REFERENCES Usuario (cedula)
   
   ![Estructura](https://github.com/aReinoso007/Practica-de-laboratorio-01-Servlets-JSP-y-JDBC/blob/master/1.png)
   
-  #Parte publica:
+  ## Parte publica:
   Para la parte pública de mi aplicación tengo: Listar Contactos y buscar. 
   
   ![Estructura](https://github.com/aReinoso007/Practica-de-laboratorio-01-Servlets-JSP-y-JDBC/blob/master/2.png)
@@ -94,7 +94,7 @@ REFERENCES Usuario (cedula)
    
    ![Estructura](https://github.com/aReinoso007/Practica-de-laboratorio-01-Servlets-JSP-y-JDBC/blob/master/6.png)
    
-   ##Perfil de Usuario
+   ## Perfil de Usuario
    
    ![Estructura](https://github.com/aReinoso007/Practica-de-laboratorio-01-Servlets-JSP-y-JDBC/blob/master/7.png)
    
