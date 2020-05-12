@@ -13,5 +13,10 @@ de software MVC y DAO
   apellidos, correo y contraseña. Y cada uno de estos usuarios podrá tener
   asignado uno o más teléfonos de contacto de diferente tipo y operador, por
   ejemplo:
+  
+  * •	El usuario “Juanito” tiene los teléfonos 0998121212 de tipo celular y operadora Movistar; así como también tiene asignado el teléfono 0728222111 de tipo convencional y operador CNT
+  
+  Para lo cual, se propone el siguiente diagrama de clases:
+  ![Estructura](https://github.com/aReinoso007/Practica-de-laboratorio-01-Servlets-JSP-y-JDBC/blob/master/1.png)
 .
 ###  ACTIVIDADES A DESARROLLAR
