@@ -62,13 +62,42 @@ REFERENCES Usuario (cedula)
 
   ```
   Estructura de la parte de las vistas:
-  Mi aplicación cuenta con 4 opciones principales
+  Mi aplicación cuenta con 4 opciones principales.
+  
   ![Estructura](https://github.com/aReinoso007/Practica-de-laboratorio-01-Servlets-JSP-y-JDBC/blob/master/1.png)
   
   #Parte publica:
   Para la parte pública de mi aplicación tengo: Listar Contactos y buscar. 
+  
   ![Estructura](https://github.com/aReinoso007/Practica-de-laboratorio-01-Servlets-JSP-y-JDBC/blob/master/2.png)
-
+  
+  
+  En la parte de “Lista de contactos” se puede ver todos los teléfonos de los usuarios, así también como la
+  cedula de los mismos.
+  Para la segunda parte publica, el usuario que no hace sesión tiene la opción de buscar mediante correo y
+  cedula:
+  
+  
+   ![Estructura](https://github.com/aReinoso007/Practica-de-laboratorio-01-Servlets-JSP-y-JDBC/blob/master/3.png)
+   
+   Ahora para buscar por numero de cedula:
+   
+   ![Estructura](https://github.com/aReinoso007/Practica-de-laboratorio-01-Servlets-JSP-y-JDBC/blob/master/4.png)
+   
+   
+   Si hacemos una consulta a la base de datos, podemos comprobar que solo existen 2 numeros asociados a la
+  cedula introducida:
+  ![Estructura](https://github.com/aReinoso007/Practica-de-laboratorio-01-Servlets-JSP-y-JDBC/blob/master/5.png)
+   
+   Para la parte privada, tenemos el perfil del usuario donde este puede buscar, eliminar y agregar números a su
+  agenda telefónica:
+   
+   ![Estructura](https://github.com/aReinoso007/Practica-de-laboratorio-01-Servlets-JSP-y-JDBC/blob/master/6.png)
+   
+   #Perfil de Usuario
+   
+   ![Estructura](https://github.com/aReinoso007/Practica-de-laboratorio-01-Servlets-JSP-y-JDBC/blob/master/7.png)
+   
 3.  Realizar varios commits en la herramienta GitHub que demuestren el desarrollo de la aplicación.
 4. Generar el informe de la práctica con el desarrollo de cada uno de los puntos descritos anteriormente.
 5. Implementar el README del repositorio del proyecto con la misma información del informe de la práctica
