@@ -14,19 +14,19 @@ de software MVC y DAO
   asignado uno o más teléfonos de contacto de diferente tipo y operador, por
   ejemplo:
   
-  * •	El usuario “Juanito” tiene los teléfonos 0998121212 de tipo celular y operadora Movistar; así como también tiene asignado el teléfono 0728222111 de tipo convencional y operador CNT
+  * •El usuario “Juanito” tiene los teléfonos 0998121212 de tipo celular y operadora Movistar; así como también tiene asignado el teléfono 0728222111 de tipo convencional y operador CNT.
   
   Para lo cual, se propone el siguiente diagrama de clases:
   ![Estructura](https://github.com/aReinoso007/Practica-de-laboratorio-01-Servlets-JSP-y-JDBC/blob/master/diagramas.png)
 
 Los requerimientos funcionales del sistema son:
-* •	Los usuarios pueden registrarse en la aplicación a través de un formulario de creación de cuentas.
+* 	Los usuarios pueden registrarse en la aplicación a través de un formulario de creación de cuentas.
 * •	Un usuario puede iniciar sesión usando su correo y contraseña.
 *•	Una vez iniciado sesión el usuario podrá:
-  ** •	Registrar, modificar, eliminar, buscar y listar sus teléfonos
-  ** •	Listar los números de teléfono de un usuario usando su número de cédula o correo electrónico
-  ** •	Podrá llamar o enviar un correo electrónico desde el sistema usando aplicaciones externas.
- * •	Los datos siempre deberán ser validados cuando se trabaje a través de formularios
+  ** Registrar, modificar, eliminar, buscar y listar sus teléfonos
+  ** Listar los números de teléfono de un usuario usando su número de cédula o correo electrónico
+  ** Podrá llamar o enviar un correo electrónico desde el sistema usando aplicaciones externas.
+ * Los datos siempre deberán ser validados cuando se trabaje a través de formularios
 De igual manera, se pide manejar sesiones y filtros para que existe seguridad en el sistema de agenda telefónica. Por lo qué, debe existir una parte pública y una privada. La parte privada ha sido descrita en los requisitos antes planteados. Y la parte pública será una página index.html a través de la cual podrán acceder al sistema. No obstante, se debe generar una página con la experiencia e interfaz de usuario apropiada, como la que se muestra a continuación:
 ![Estructura](https://github.com/aReinoso007/Practica-de-laboratorio-01-Servlets-JSP-y-JDBC/blob/master/estructura.png)
 
