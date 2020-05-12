@@ -9,16 +9,16 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class Login
+ * Servlet implementation class LogOut
  */
-@WebServlet("/Login")
-public class Login extends HttpServlet {
+@WebServlet(name="LogOut", urlPatterns = {"/LogOut"})
+public class LogOut extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Login() {
+    public LogOut() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -28,12 +28,13 @@ public class Login extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		HttpSession sesion = request.getSession(true);
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 		
-		sesion.setAttribute("accesos", sesion.getId());
-		System.out.println("Sesion inicio: "+ sesion.getId());
+		HttpSession sesion = request.getSession();
 		
-		getServletContext().getRequestDispatcher("/JSPs/Login.jsp").forward(request, response);
+		sesion.invalidate();
+		
+		getServletContext().getRequestDispatcher("/Login").forward(request, response);
 	}
 
 	/**

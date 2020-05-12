@@ -54,7 +54,10 @@ public class controladorSesiones extends HttpServlet {
 			getServletContext().getRequestDispatcher("/JSPs/Agregar.jsp").forward(request, response);
 		}else if(Integer.parseInt(request.getParameter("id"))==2) {
 			
+			//se obtiene la id del usuario cuando se ingresa
 			usuario = usuarioDao.read(request.getParameter("idU"));
+			
+			
 			request.setAttribute("telefono", telfDAO.buscarCedula(usuario.getCedula()));
 			request.setAttribute("usuario", usuario);
 			
@@ -63,6 +66,8 @@ public class controladorSesiones extends HttpServlet {
 		//No tocar
 		if(Integer.parseInt(request.getParameter("id"))==3) {
 			System.out.println("Ingresando...");
+			
+			//probar para luego obtener todos los contactos con .obtenerContacto();
 			request.setAttribute("telefonos", telfDAO.find());
 			
 			

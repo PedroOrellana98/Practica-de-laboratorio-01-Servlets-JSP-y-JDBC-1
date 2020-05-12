@@ -53,7 +53,7 @@
 		<a href="/Practica-1/JSPs/Inicio.jsp">Home</a>
 		<a href="/Practica-1/JSPs/Busquedas.jsp">Busqueda</a>
 		<a href="/Practica-1/controladorSesiones?id=1&c=${p2.cedula }">Agregar Numero</a>
-		<a href="/Practica-1/JSPs/Login.jsp" style="float:right">Sing out</a>
+		<a href="/Practica-1/LogOut" style="float:right">Sing out</a>
 	</div>
 	
 	
@@ -69,7 +69,7 @@
 	<tbody>
 		<c:forEach var="telf" items="${t1}">
 			<tr>	
-				<td>${telf.codigo}</td>
+				<td>${telf.telf_id}</td>
 				<td>${telf.numero}<a href="tel: ${telf.numero }"><img width="25px"
 							height="25px"
 							src="https://img.icons8.com/ultraviolet/40/000000/phone.png" /></a></td>

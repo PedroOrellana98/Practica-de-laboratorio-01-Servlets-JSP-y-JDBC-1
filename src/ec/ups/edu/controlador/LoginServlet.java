@@ -70,13 +70,15 @@ public class LoginServlet extends HttpServlet {
 			contrasena = request.getParameter("password");
 			user = usuarioDao.buscar(correo, contrasena);
 			System.out.println("retorno de usuario: "+ usuarioDao.buscar(correo, contrasena));
+			url="/JSPs/IndexUsuario.jsp";
 			try {
 				if (user != null) {
 					TelefonoDAO telfDAO = DAOFactory.getFactory().getTelefonoDAO();
 
 					request.setAttribute("telefono", telfDAO.buscarCedula(user.getCedula()));
 					request.setAttribute("usuario", user);
-					getServletContext().getRequestDispatcher("/JSPs/IndexUsuario.jsp").forward(request, response);
+					
+					getServletContext().getRequestDispatcher(url).forward(request, response);
 				} 
 			} catch (Exception e) {
 				System.out.println("Error en el login: " + e.getMessage());
