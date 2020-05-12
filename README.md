@@ -61,7 +61,13 @@ REFERENCES Usuario (cedula)
 )
 
   ```
+  Estructura de la parte de las vistas:
+  Mi aplicación cuenta con 4 opciones principales
+  ![Estructura](https://github.com/aReinoso007/Practica-de-laboratorio-01-Servlets-JSP-y-JDBC/blob/master/1.png)
   
+  #Parte publica:
+  Para la parte pública de mi aplicación tengo: Listar Contactos y buscar. 
+  ![Estructura](https://github.com/aReinoso007/Practica-de-laboratorio-01-Servlets-JSP-y-JDBC/blob/master/2.png)
 
 3.  Realizar varios commits en la herramienta GitHub que demuestren el desarrollo de la aplicación.
 4. Generar el informe de la práctica con el desarrollo de cada uno de los puntos descritos anteriormente.
