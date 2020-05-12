@@ -31,7 +31,7 @@
 <div class="container">
 	<form action="/Practica-1/AgregarNumero?ced=${p2 }" method="POST">
 
-		<h1>Ingrese el numero para agregar:</h1>
+		<h1>Agregar telefono:</h1>
 		
 		<label for="numero" class="mb-2 mr-sm-2" >Numero: </label> 
 		<input type="number" name="numero" placeholder="numero" maxlength="10"> 
