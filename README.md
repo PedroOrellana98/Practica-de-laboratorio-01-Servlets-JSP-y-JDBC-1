@@ -39,6 +39,30 @@ Finalmente, el sistema de agenda telefónica debe aplicar los patrones de diseñ
 ###  ACTIVIDADES A DESARROLLAR
 1. Crear un repositorio en GitHub con el nombre “Práctica de laboratorio 01: Servlets, JSP y JDBC”
 2. Desarrollar una aplicación con tecnología JEE para gestionar una agenda telefónica en la web.
+  Para esta aplicación he usado MySQL para alojar la base de datos.
+  Aquí tenemos el script para crear la base de datos:
+  ```
+    CREATE TABLE Usuario(
+cedula varchar(25) PRIMARY KEY,
+nombre varchar(255) not null,
+apellido varchar(255) not null,
+correo varchar(255) not null,
+contrasena varchar(255) not null
+);
+CREATE TABLE Telefono(
+tel_codigo int AUTO_INCREMENT,
+tel_cedula varchar(25) not null,
+tel_numero varchar(255) null,
+tel_tipo varchar(255) null,
+tel_operadora varchar(255) null,
+PRIMARY KEY (tel_codigo),
+FOREIGN KEY (usu_cedula)
+REFERENCES Usuario (cedula)
+)
+
+  ```
+  
+
 3.  Realizar varios commits en la herramienta GitHub que demuestren el desarrollo de la aplicación.
 4. Generar el informe de la práctica con el desarrollo de cada uno de los puntos descritos anteriormente.
 5. Implementar el README del repositorio del proyecto con la misma información del informe de la práctica
