@@ -43,6 +43,11 @@
 		<br>
 		<br>
 		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
 	</div>
 	<div class="topnav">
 		<a href="/Practica-1/JSPs/Inicio.jsp">Home</a>

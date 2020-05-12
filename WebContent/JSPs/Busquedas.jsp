@@ -20,44 +20,33 @@
 	<div id="header">
 		<h1>Busquedas</h1>
 		<h1>
-			<a href="/controladorSesiones?id=3" id="contact-link">Contactos</a>
+			<a href="/Practica-1/controladorSesiones?id=3" id="contact-link">Contactos</a>
 		</h1>
 	</div>
 	<div class="topnav">
 		<a href="/Practica-1/JSPs/Inicio.jsp">Home</a>
-	</div>
-	<form action="/Practica-1/Buscar?id=1" method="POST">
-		<div class="input-group mb-3 input-group-sm">
-			<div class="input-group-prepend">
-				<button class="input-group-text" name="buscarCorreo" value="correoB"
-					type="submit">Buscar</button>
+		<form action="/Practica-1/Buscar?id=1" method="POST">
+		<a><input type="text" class="form-control" name="correo"
+				placeholder="Buscar por correo....."></a>
+		<a><button class="input-group-text" name="buscarCorreo" value="correoB"
+					type="submit">Buscar</button></a>
+		</form>
 
-			</div>
-			<input type="text" class="form-control" name="correo"
-				placeholder="Buscar por correo.....">
-		</div>
-	</form>
-
+		<form action="/Practica-1/Buscar?id=2" method="POST">	
+		<a><input type="text" class="form-control" name="cedula"
+				placeholder="Buscar por cedula....."></a>		
+		<a><button class="input-group-text" name="buscarCed" value="cedulaB" type="submit">Buscar</button></a>
 
 
-
-	<form action="/Practica-1/Buscar?id=2" method="POST">
-		<div class="input-group mb-3 input-group-sm">
-			<div class="input-group-prepend">
 			
-			<button class="input-group-text" name="buscarCed" value="cedulaB" type="submit">Buscar</button>
-
-			</div>
-			<input type="text" class="form-control" name="cedula"
-				placeholder="Buscar por cedula.....">
-		</div>
 	</form>
+	</div>
+	
 
 
 	<table class="container">
 		<thead>
 			<tr>
-				<th>Nombre</th>
 				<th>Email</th>
 				<th>Tipo</th>
 				<th>Operadora</th>

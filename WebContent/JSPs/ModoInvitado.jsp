@@ -23,27 +23,10 @@
 	<div class="topnav">
 		<a href="/Practica-1/JSPs/Inicio.jsp">Home</a>
 	</div>
-	<form action="/Practica-1/Buscar?id=1" method="POST">
-		<div class="buquedas">		
-			<input type="text" name="correo" placeholder="correo">
-			<br>
-			<br>
-			<button type="submit" name="buscar" value="buscar">buscar correo</button>
-		</div>
-	</form>
-	<br>
-	<form action="/Practica-1/Buscar?id=2" method="POST">
-		<div class="busquedas">
-			<input type="text" name="cedula" placeholder="cedula"> 
-			<br>
-			<br>
-			<button type="submit" name="buscar" value="buscar" style="width:50px, heigh:25px">buscar correo</button>
-		</div>
-	</form>
+
 	<table class="container">
 	<thead>
 		<tr>
-			
 			<th><h1>Correo</h1></th>
 			<th><h1>Numero</h1></th>
 			<th><h1>Tipo</h1></th>
