@@ -47,7 +47,7 @@ public class JDBCTelefonoDAO extends JDBCGenericDAO<Telefono, String> implements
 		
 		try {
 			if(rs.next()) {
-				t = new Telefono(String.valueOf(rs.getInt("tel_codigo")), rs.getString("tel_numero"), rs.getString("tel_tipo"), rs.getString("tel_operadora"));
+				t = new Telefono(rs.getInt("tel_codigo"), rs.getString("tel_cedula"), rs.getString("tel_numero"), rs.getString("tel_tipo"), rs.getString("tel_operadora"));
 			}
 		}catch(SQLException e) {
 			System.out.println(">>> Warning (TelefonoDAO:read): "+ e.getMessage());
@@ -67,7 +67,7 @@ public class JDBCTelefonoDAO extends JDBCGenericDAO<Telefono, String> implements
 	@Override
 	public void delete(Telefono entity) {
 		// TODO Auto-generated method stub
-		jdbc.update("DELETE FROM Telefono WHERE tel_codigo =" + entity.getCodigo());
+		jdbc1.update("DELETE FROM Telefono WHERE tel_codigo="+entity.getTelf_id());
 	}
 
 	@Override
@@ -77,7 +77,7 @@ public class JDBCTelefonoDAO extends JDBCGenericDAO<Telefono, String> implements
 		ResultSet rs = jdbc.query("SELECT * FROM Telefono");
 		try {
 			while(rs.next()) {
-				listTelefono.add(new Telefono(String.valueOf(rs.getInt("tel_codigo")), rs.getString("tel_numero"), rs.getString("tel_tipo"), rs.getString("tel_operadora")));
+				listTelefono.add(new Telefono(rs.getInt("tel_codigo"), rs.getString("tel_cedula"), rs.getString("tel_numero"), rs.getString("tel_tipo"), rs.getString("tel_operadora")));
 				//System.out.println("desde el jdbcTelefono"+listTelefono);
 			}
 		}catch(SQLException e) {
@@ -171,7 +171,7 @@ public class JDBCTelefonoDAO extends JDBCGenericDAO<Telefono, String> implements
 		ResultSet rs = jdbc.query("SELECT * FROM usuario, telefono WHERE telefono.tel_cedula=usuario.cedula and usuario.cedula="+ cedula);
 		try {
 			while (rs.next()) {
-				list.add(new Telefono(String.valueOf(rs.getInt("tel_codigo")), rs.getString("tel_numero"), rs.getString("tel_tipo"), rs.getString("tel_operadora")));
+				list.add(new Telefono(rs.getInt("tel_codigo"),String.valueOf(rs.getInt("tel_codigo")), rs.getString("tel_numero"), rs.getString("tel_tipo"), rs.getString("tel_operadora")));
 				//System.out.println("desde el jdbcTelefono"+listTelefono);
 			
 			}
@@ -260,6 +260,14 @@ public class JDBCTelefonoDAO extends JDBCGenericDAO<Telefono, String> implements
 		}
 		return listCont;
 	}
+
+	@Override
+	public void eliminar2(String tel_id) {
+		// TODO Auto-generated method stub
+		jdbc1.update("DELETE FROM Telefono WHERE tel_codigo="+Integer.parseInt(tel_id));
+	}
+
+	
 
 
 	

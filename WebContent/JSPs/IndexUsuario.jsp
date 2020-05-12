@@ -68,7 +68,7 @@
 				<td>${telf.numero}</td>
 				<td>${telf.tipo}</td>
 				<td>${telf.operadora}</td>
-				<td>-</td>
+				<td><a href="/Practica-1/EliminarNumero?id=${telf.codigo}&idUser=${p2.cedula}">Eliminar</a></td>
 			</tr>
 		</c:forEach>
 	</tbody>

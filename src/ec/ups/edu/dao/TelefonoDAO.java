@@ -12,5 +12,6 @@ public interface TelefonoDAO extends GenericDAO<Telefono, String> {
 	List<Contacto> obtenerContacto();
 
 	List<Contacto> buscarCedInv(String cedula);
+	void eliminar2(String tel_id);
 		
 }
