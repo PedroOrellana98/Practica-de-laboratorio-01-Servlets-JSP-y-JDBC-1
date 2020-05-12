@@ -42,7 +42,7 @@ public class testUsuario {
 		}*/
 		
 		//System.out.println(telDAO.find());
-		telDAO.eliminar2("3");
+		System.out.println(telDAO.buscarCedula("1400919302"));
 		
 		
 	}
