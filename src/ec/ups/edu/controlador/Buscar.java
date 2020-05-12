@@ -16,7 +16,7 @@ import ec.ups.edu.modelo.Usuario;
 /**
  * Servlet implementation class BuscarPorCedula
  */
-@WebServlet("/BuscarPorCedula")
+@WebServlet("/Buscar")
 public class Buscar extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -55,7 +55,7 @@ public class Buscar extends HttpServlet {
 				System.out.print("Correo: " + request.getParameter("correo"));
 
 				request.setAttribute("telefono", telefonoDao.buscarCorreo(request.getParameter("correo")));
-				getServletContext().getRequestDispatcher("/Practica-1/JSPs/Busquedas.jsp").forward(request, response);
+				getServletContext().getRequestDispatcher("/JSPs/Busquedas.jsp").forward(request, response);
 
 			}
 
@@ -68,7 +68,7 @@ public class Buscar extends HttpServlet {
 			if (request.getParameter("cedula") != null) {
 				System.out.print("Cedula: " + request.getParameter("cedula"));
 				request.setAttribute("telefono", telefonoDao.buscarCedInv(request.getParameter("cedula")));
-				getServletContext().getRequestDispatcher("/Practica-1/JSPs/Busquedas.jsp").forward(request, response);
+				getServletContext().getRequestDispatcher("/JSPs/Busquedas.jsp").forward(request, response);
 			}
 		} else {
 
