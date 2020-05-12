@@ -8,8 +8,8 @@ public class testUsuario {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		UsuarioDAO usuDAO = DAOFactory.getFactory().getUsuarioDAO();
-		TelefonoDAO telDAO = DAOFactory.getFactory().getTelefonoDAO();
+		//UsuarioDAO usuDAO = DAOFactory.getFactory().getUsuarioDAO();
+		//TelefonoDAO telDAO = DAOFactory.getFactory().getTelefonoDAO();
 		
 		
 		/*Usuario u1, u2, u3, u4, u5;
@@ -30,8 +30,8 @@ public class testUsuario {
 			System.out.println("Si existe");
 		}*/
 		//System.out.println(usuDAO.buscar("ralexjessiel@gmail.com", "123"));
-		Telefono t1, t2;
-		t1 = new Telefono("1400919302", "2", "celular","tuenti");
+		//Telefono t1, t2;
+		//t1 = new Telefono("1400919302", "2", "celular","tuenti");
 		//telDAO.create(t1);
 		//System.out.println(t1.getTelf_id());
 		/*try {
@@ -42,7 +42,7 @@ public class testUsuario {
 		}*/
 		
 		//System.out.println(telDAO.find());
-		System.out.println(telDAO.buscarCedula("1400919302"));
+		//System.out.println(telDAO.buscarCedula("1400919302"));
 		
 		
 	}

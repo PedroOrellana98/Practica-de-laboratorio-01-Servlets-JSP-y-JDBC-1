@@ -38,13 +38,13 @@ public class JDBCUsuarioDAO extends JDBCGenericDAO<Usuario, String> implements U
 	public Usuario read(String id) {
 		// TODO Auto-generated method stub
 		Usuario usuOBJ = null;
-		ResultSet rs = jdbc1.query("SELECT * FROM Usuario WHERE cedula="+id);
+		ResultSet rs = jdbc1.query("SELECT * FROM Usuario WHERE cedula=" + id);
 		try {
 			if (rs != null && rs.next()) {
 				usuOBJ = new Usuario(rs.getString("cedula"), rs.getString("nombre"), rs.getString("apellido"), rs.getString("correo"), rs.getString("contrasena"));
 			}
 		}catch(SQLException e) {
-			System.out.println("Error al leer usuario >>"+e.getMessage());
+			System.out.println("WARNING>> (JDBCUsuarioDAO):read "+e.getMessage());
 		}
 		return usuOBJ;
 	}

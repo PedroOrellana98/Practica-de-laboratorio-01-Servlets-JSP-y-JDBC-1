@@ -75,7 +75,7 @@
 							src="https://img.icons8.com/ultraviolet/40/000000/phone.png" /></a></td>
 				<td>${telf.tipo}</td>
 				<td>${telf.operadora}</td>
-				<td><a href="/Practica-1/EliminarNumero?id=${telf.codigo}&idUser=${p2.cedula}">Eliminar</a></td>
+				<td><a href="/Practica-1/EliminarNumero?id=${telf.telf_id}&idUser=${p2.cedula}">Eliminar</a></td>
 			</tr>
 		</c:forEach>
 	</tbody>

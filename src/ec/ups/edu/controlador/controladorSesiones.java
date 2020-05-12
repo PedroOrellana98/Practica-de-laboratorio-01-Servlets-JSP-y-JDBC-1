@@ -16,7 +16,7 @@ import ec.ups.edu.modelo.Usuario;
 /**
  * Servlet implementation class controladorSesiones
  */
-@WebServlet("/controladorSesiones")
+@WebServlet( name = "controladorSesiones", urlPatterns= {"/controladorSesiones"})
 public class controladorSesiones extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -34,9 +34,11 @@ public class controladorSesiones extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
 		HttpSession sesion = request.getSession();
 		sesion.setAttribute("accesos", sesion.getAttribute("accesos"));
 		
+		System.out.println("Id de sesion del controlador "+ sesion.getAttribute("accesos"));
 		TelefonoDAO telfDAO = DAOFactory.getFactory().getTelefonoDAO();
 		Usuario usuario = new Usuario();
 		UsuarioDAO usuarioDao = DAOFactory.getFactory().getUsuarioDAO();
@@ -44,9 +46,10 @@ public class controladorSesiones extends HttpServlet {
 		
 		if(Integer.parseInt(request.getParameter("id"))==1) {
 			
-			UsuarioDAO usuDAO = DAOFactory.getFactory().getUsuarioDAO();
+			usuario = usuarioDao.read(request.getParameter("c"));
+			
 			request.setAttribute("idc", request.getParameter("c"));
-			request.setAttribute("usuarios", usuDAO.find());
+			request.setAttribute("usuarios", usuarioDao.find());
 			
 			getServletContext().getRequestDispatcher("/JSPs/Agregar.jsp").forward(request, response);
 		}else if(Integer.parseInt(request.getParameter("id"))==2) {

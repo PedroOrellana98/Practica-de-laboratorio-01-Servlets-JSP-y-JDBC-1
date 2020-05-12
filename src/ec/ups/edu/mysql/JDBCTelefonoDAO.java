@@ -43,7 +43,7 @@ public class JDBCTelefonoDAO extends JDBCGenericDAO<Telefono, String> implements
 		// TODO Auto-generated method stub
 		
 		Telefono t = null;
-		ResultSet rs = jdbc.query("SELECT * FROM Telefono where tel_cedula='" + id+"'");
+		ResultSet rs = jdbc.query("SELECT * FROM Telefono where tel_codigo=" + Integer.parseInt(id));
 		
 		try {
 			if(rs.next()) {
@@ -74,7 +74,7 @@ public class JDBCTelefonoDAO extends JDBCGenericDAO<Telefono, String> implements
 	public List<Telefono> find() {
 		// TODO Auto-generated method stub
 		List<Telefono> listTelefono = new ArrayList<Telefono>();
-		ResultSet rs = jdbc.query("SELECT * FROM Telefono");
+		ResultSet rs = jdbc1.query("SELECT * FROM Telefono");
 		try {
 			while(rs.next()) {
 				listTelefono.add(new Telefono(rs.getInt("tel_codigo"), rs.getString("tel_cedula"), rs.getString("tel_numero"), rs.getString("tel_tipo"), rs.getString("tel_operadora")));
@@ -186,17 +186,17 @@ public class JDBCTelefonoDAO extends JDBCGenericDAO<Telefono, String> implements
 	public List<Contacto> obtenerContacto() {
 		// TODO Auto-generated method stub
 		List<Contacto> listCont = new ArrayList<Contacto>();
-		System.out.print("Consultando.....");
+		System.out.print("Obteniendo obtenercontacto");
 		
 		//Usuario user = new Usuario();
 		
 		List<Telefono> list = new ArrayList<Telefono>();
 		ResultSet rs = jdbc1.query("SELECT * FROM telefono, usuario where usuario.cedula=telefono.tel_cedula");
-		//ResultSet t = null;
+
 		try {
 			while (rs.next()) {
 				Contacto cont=new Contacto();
-				//list.add(new telefono(rs.getInt("tel_codigo"), rs.getString("tel_cedula"), rs.getString("tel_numero"),rs.getString("tel_tipo"), rs.getString("tel_operadora")));
+				
 				cont.setNumero(rs.getString("tel_numero"));
 				
 				cont.setOperadora(rs.getString("tel_operadora"));

@@ -39,18 +39,21 @@ public class EliminarNumero extends HttpServlet {
 		TelefonoDAO telDAO = DAOFactory.getFactory().getTelefonoDAO();
 		Telefono telefono = new Telefono();
 		Usuario usuario = new Usuario();
-		String telfID="";
+		
 		
 		String id= request.getParameter("idUser");
-		telfID = request.getParameter("id");
-		System.out.println("el id del telefono: "+request.getParameter("id"));
+		//telfID = request.getParameter("id");
+		
+		//System.out.println("el id del telefono: "+request.getParameter("id"));
 		
 		
-		telefono = telDAO.read(telfID);
+		telefono = telDAO.read(request.getParameter("id"));
+		System.out.println("Telefono recuperado "+telefono);
 		System.out.println("telefono para eliminar "+telefono);
 		System.out.println("cedula del usuario en delete:" +id);
 		
-		telDAO.eliminar2(telfID);
+
+		telDAO.delete(telefono);
 		System.out.println("paso del eliminar");
 		
 		try {
@@ -59,6 +62,8 @@ public class EliminarNumero extends HttpServlet {
 			
 			request.setAttribute("usuario", usuario);
 			request.setAttribute("telefono", telDAO.find());
+			System.out.println("lista de telefonos");
+			System.out.println(telDAO.find());
 			getServletContext().getRequestDispatcher("/JSPs/IndexUsuario.jsp").forward(request, response);
 			
 		}catch(Exception e) {
