@@ -98,6 +98,15 @@ REFERENCES Usuario (cedula)
    
    ![Estructura](https://github.com/aReinoso007/Practica-de-laboratorio-01-Servlets-JSP-y-JDBC/blob/master/7.png)
    
+   
+   Para agregar números tenemos el siguiente formulario:
+   
+   ![Estructura](https://github.com/aReinoso007/Practica-de-laboratorio-01-Servlets-JSP-y-JDBC/blob/master/8.png)
+   
+   Ingreso de los datos:
+   
+   ![Estructura](https://github.com/aReinoso007/Practica-de-laboratorio-01-Servlets-JSP-y-JDBC/blob/master/9.png)
+   
 3.  Realizar varios commits en la herramienta GitHub que demuestren el desarrollo de la aplicación.
 4. Generar el informe de la práctica con el desarrollo de cada uno de los puntos descritos anteriormente.
 5. Implementar el README del repositorio del proyecto con la misma información del informe de la práctica
