@@ -33,11 +33,11 @@
 
 		<h1>Ingrese el numero para agregar:</h1>
 		
-		<label for="numero" class="mb-2 mr-sm-2">Numero: </label> 
-		<input type="text" name="numero" placeholder="numero"> 
+		<label for="numero" class="mb-2 mr-sm-2" >Numero: </label> 
+		<input type="number" name="numero" placeholder="numero" maxlength="10"> 
 		
 		<label for="operadora" >Operadora: </label> 
-		<input type="text"name="operadora" placeholder="operadora">
+		<input type="text" name="operadora" placeholder="operadora">
 		
 		 <label for="tipo">Tipo:</label>
 		 <input type="text" name="tipo" placeholder="tipo">
