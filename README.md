@@ -94,7 +94,7 @@ REFERENCES Usuario (cedula)
    
    ![Estructura](https://github.com/aReinoso007/Practica-de-laboratorio-01-Servlets-JSP-y-JDBC/blob/master/6.png)
    
-   #Perfil de Usuario
+   ##Perfil de Usuario
    
    ![Estructura](https://github.com/aReinoso007/Practica-de-laboratorio-01-Servlets-JSP-y-JDBC/blob/master/7.png)
    
