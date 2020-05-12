@@ -58,12 +58,12 @@
 			<c:forEach var="telf" items="${p1}">
 				<tr>
 
-					<td>${telf.correo}<a href=""><img width="25px"
+					<td>${telf.correo}<a href="mailto:${telf.correo }"><img width="25px"
 							height="25px"
 							src="https://img.icons8.com/flat_round/64/000000/secured-letter--v1.png" /></a></td>
 					<td>${telf.tipo}</td>
 					<td>${telf.operadora}</td>
-					<td>${telf.numero}<a href=""><img width="25px"
+					<td>${telf.numero}<a href="tel: ${telf.numero }"><img width="25px"
 							height="25px"
 							src="https://img.icons8.com/ultraviolet/40/000000/phone.png" /></a>
 					</td>

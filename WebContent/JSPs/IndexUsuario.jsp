@@ -53,7 +53,7 @@
 		<a href="/Practica-1/JSPs/Inicio.jsp">Home</a>
 		<a href="/Practica-1/JSPs/Busquedas.jsp">Busqueda</a>
 		<a href="/Practica-1/controladorSesiones?id=1&c=${p2.cedula }">Agregar Numero</a>
-		<a href="" style="float:right">Sing out</a>
+		<a href="/Practica-1/JSPs/Login.jsp" style="float:right">Sing out</a>
 	</div>
 	
 	
@@ -70,7 +70,9 @@
 		<c:forEach var="telf" items="${t1}">
 			<tr>	
 				<td>${telf.codigo}</td>
-				<td>${telf.numero}</td>
+				<td>${telf.numero}<a href="tel: ${telf.numero }"><img width="25px"
+							height="25px"
+							src="https://img.icons8.com/ultraviolet/40/000000/phone.png" /></a></td>
 				<td>${telf.tipo}</td>
 				<td>${telf.operadora}</td>
 				<td><a href="/Practica-1/EliminarNumero?id=${telf.codigo}&idUser=${p2.cedula}">Eliminar</a></td>
